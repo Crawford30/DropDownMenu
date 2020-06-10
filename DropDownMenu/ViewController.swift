@@ -26,6 +26,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        serviceCategory.delegate = self
+//        servicesUnderCategory.delegate = self
+        
+        
+        
+        
         // Do any additional setup after loading the view.
         
         //serviceCategory.isUserInteractionEnabled = false
@@ -43,6 +50,22 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
         
     }
+    
+    
+    
+    
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//
+//        if textField == serviceCategory && textField == servicesUnderCategory {
+//
+//            prepDropDownMenu()
+//
+//
+//        }
+//        return false
+//    }
+    
+    
     
 //    func textFieldDidEndEditing(_ textField: UITextField) {
 //
@@ -63,6 +86,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 //    }
     
     
+     
     
     @IBAction func submitDataAction(_ sender: UIButton) {
         
@@ -71,6 +95,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     
     @IBAction func serviceCategoryAction(_ sender: UITextField) {
+        
+       
         
         self.serviceCategory.tintColor = UIColor.clear 
         
