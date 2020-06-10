@@ -98,7 +98,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
        
         
-        self.serviceCategory.tintColor = UIColor.clear 
+        self.serviceCategory.tintColor = UIColor.clear
+        
+        serviceCategory.inputView = UIView() //disable the keyboard from appearing
         
         prepDropDownMenu()
         
@@ -110,6 +112,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBAction func servicesUnderCatAction(_ sender: UITextField) {
         
         self.servicesUnderCategory.tintColor = UIColor.clear
+        
+        servicesUnderCategory.inputView = UIView() //disable the keyboard from appearing
         
         prepDropDownMenu()
         
