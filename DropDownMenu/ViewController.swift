@@ -1,6 +1,7 @@
 //
 //  ViewController.swift
 //  DropDownMenu
+//https://stackoverflow.com/questions/5615806/disable-uitextfield-keyboard
 //
 //  Created by JOEL CRAWFORD on 6/9/20.
 //  Copyright © 2020 JOEL CRAWFORD. All rights reserved.
@@ -43,6 +44,24 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
     }
     
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//
+////        if (serviceCategory.text! != "" && servicesUnderCategory.text! != "") {
+////
+////           serviceCategory.isUserInteractionEnabled = true
+////           servicesUnderCategory.isUserInteractionEnabled = true
+////
+////
+////        } else {
+////
+////
+////            serviceCategory.isUserInteractionEnabled = false
+////            servicesUnderCategory.isUserInteractionEnabled = false
+////
+////        }
+//
+//    }
+    
     
     
     @IBAction func submitDataAction(_ sender: UIButton) {
@@ -53,6 +72,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     @IBAction func serviceCategoryAction(_ sender: UITextField) {
         
+        self.serviceCategory.tintColor = UIColor.clear 
+        
         prepDropDownMenu()
         
         
@@ -61,6 +82,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     
     @IBAction func servicesUnderCatAction(_ sender: UITextField) {
+        
+        self.servicesUnderCategory.tintColor = UIColor.clear
         
         prepDropDownMenu()
         
@@ -89,11 +112,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         //Display the table view below the servicecategory textfield when its tapped or else under the servicesUnderCategory textfield
         if (serviceCategory.isEditing) {
             
+//            serviceCategory.delegate = self
+//
+//            serviceCategory.resignFirstResponder()
+            
             myTableView.frame.origin.x = tempView.frame.origin.x + serviceCategory.frame.origin.x
             
             myTableView.frame.origin.y = tempView.frame.origin.y + serviceCategory.frame.origin.y + serviceCategory.frame.size.height
             
         } else {
+            
+//            servicesUnderCategory.delegate = self
+//
+//            servicesUnderCategory.resignFirstResponder()
             
             myTableView.frame.origin.x = tempView.frame.origin.x + servicesUnderCategory.frame.origin.x
             
