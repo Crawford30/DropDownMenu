@@ -27,6 +27,19 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //serviceCategory.isUserInteractionEnabled = false
+//
+//        if (serviceCategory.text! == "")  {
+//
+//            serviceCategory.isUserInteractionEnabled = false
+//
+//
+//        } else {
+//            serviceCategory.isUserInteractionEnabled = true
+//
+//        }
+        
+        
         
     }
     
@@ -111,7 +124,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         print("Num: \(indexPath.row)")
         print("Value: \(myServicesArray[indexPath.row])")
         
-        serviceCategory.text! = myServicesArray[indexPath.row]
+        if serviceCategory.isEditing {
+        
+            serviceCategory.text! = myServicesArray[indexPath.row]
+            
+        } else {
+            
+            servicesUnderCategory.text! =  myServicesArray[indexPath.row]
+        }
         
         self.view.viewWithTag(1000)?.removeFromSuperview()
         
